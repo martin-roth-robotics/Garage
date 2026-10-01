@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<!--
+  Earl & Chuck’s Automotive — site officiel
+  Professionnels de la mécanique depuis 1978. Professionnels d'Internet depuis 2026.
+  Site internet conçu avec beaucoup trop de café et probablement trop de WD-40.
+-->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Earl &amp; Chuck’s Automotive — Garage familial depuis 1978</title>
+  <meta name="description" content="Earl &amp; Chuck’s Automotive : garage familial américain. Révision, freinage, pneus, diagnostic moteur et préparation muscle car. God Bless America and Carburetors.">
+  <meta name="theme-color" content="#13294b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2313294b' stroke='%238f1e1e' stroke-width='4'/%3E%3Cpolygon points='32,12 37.9,25.6 52.6,27 41.5,36.7 44.8,51 32,43.5 19.2,51 22.5,36.7 11.4,27 26.1,25.6' fill='%23f6f0e1'/%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@400;500;700&family=Roboto+Slab:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Sprite d'icônes -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12,2 14.9,8.6 22,9.3 16.6,14 18.2,21 12,17.3 5.8,21 7.4,14 2,9.3 9.1,8.6"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-oil" viewBox="0 0 24 24"><path d="M12 2.5C12 2.5 5 10.5 5 15.2a7 7 0 0 0 14 0C19 10.5 12 2.5 12 2.5z"/><path d="M9 15.5a3 3 0 0 0 3 3"/></symbol>
+  <symbol id="i-brake" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="6.2" r=".9"/><circle cx="12" cy="17.8" r=".9"/><circle cx="6.2" cy="12" r=".9"/><circle cx="17.8" cy="12" r=".9"/><path d="M17.5 4.2a9 9 0 0 1 2.8 4"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="1.6"/><path d="M12 6v4.4M12 13.6V18M6 12h4.4M13.6 12H18"/></symbol>
+  <symbol id="i-diag" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M6 12h3l1.5-3 3 6 1.5-3h3"/><path d="M8 21h8"/></symbol>
+  <symbol id="i-engine" viewBox="0 0 24 24"><path d="M9 3h6M12 3v3"/><rect x="5" y="6" width="14" height="10" rx="1.5"/><path d="M2 9v5M22 9v5M5 16l2 4h10l2-4"/><path d="M9 9v4M12 9v4M15 9v4"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/><path d="M9.5 3.8L12 6l2.5-2.2M9.5 20.2L12 18l2.5 2.2"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><polygon points="13,2 4,14 11,14 10,22 20,9 13,9"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M2.5 16v-3.2l2.2-4.3a2 2 0 0 1 1.8-1.1h6.3a2 2 0 0 1 1.5.7L17 10.5l3.7.9a1.8 1.8 0 0 1 1.3 1.7V16z"/><circle cx="7" cy="16.5" r="2.2"/><circle cx="17.5" cy="16.5" r="2.2"/><path d="M5 10h8"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 10v4M7 7v10M11 3.5v17M15 7v10M19 10v4M22 11.5v1"/></symbol>
+  <symbol id="i-lamp" viewBox="0 0 24 24"><rect x="3" y="7" width="15" height="10" rx="2"/><path d="M18 10h2.5v4H18M7 7V5h5v2M10.5 10.5v3M10.5 15v.1"/></symbol>
+  <symbol id="i-piston" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="12" rx="2"/><path d="M6.5 6h11M6.5 8h11"/><circle cx="12" cy="11.5" r="1.2"/><path d="M12 14.5V20"/><circle cx="12" cy="20.5" r="1.5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V3"/><path d="M5 4h14l-2.5 4L19 12H5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+</svg>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<!-- ============ BANDEAU HAUT ============ -->
+<div class="topbar">
+  <div class="container topbar__in">
+    <a class="topbar__item" href="tel:+14175550198"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>(417) 555-0198</span></a>
+    <span class="topbar__item topbar__status" data-open-status aria-live="polite">Garage familial depuis 1978</span>
+    <span class="topbar__item topbar__hide">Springfield, Missouri — Route 66</span>
+  </div>
+</div>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="site-header" id="haut">
+  <div class="container header__in">
+    <a class="brand" href="#accueil" aria-label="Earl &amp; Chuck’s Automotive — accueil">
+      <svg class="brand__badge" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#8f1e1e" stroke="#f6f0e1" stroke-width="3"/>
+        <circle cx="32" cy="32" r="23" fill="#13294b" stroke="#d4a537" stroke-width="1.5"/>
+        <polygon points="32,13 37.4,25.8 51,27 40.7,36 43.9,49.3 32,42.2 20.1,49.3 23.3,36 13,27 26.6,25.8" fill="#f6f0e1"/>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">Earl &amp; Chuck’s</span>
+        <span class="brand__sub">Automotive</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#faits-d-armes">Faits d’armes</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm nav__cta" href="#rendez-vous">Rendez-vous</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="accueil" aria-labelledby="hero-titre">
+  <div class="hero__media">
+    <!-- Image principale : placez votre photo dans /images/earl-and-chuck.jpg -->
+    <img src="images/earl-and-chuck.jpg" alt="Earl et Chuck, les deux mécaniciens et propriétaires, posant devant leur garage américain rétro" width="1536" height="1024" fetchpriority="high">
+  </div>
+  <div class="hero__content">
+    <div class="hero__panel">
+      <p class="hero__est"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg> Garage familial — Depuis 1978 <svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg></p>
+      <h1 id="hero-titre">Earl &amp; Chuck’s Automotive</h1>
+      <p class="hero__slogan">God Bless America and Carburetors</p>
+      <div class="hero__buttons">
+        <a class="btn" href="#rendez-vous">Prendre rendez-vous</a>
+        <a class="btn btn--navy" href="#services">Découvrir nos services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bandeau de petites lignes -->
+<div class="ticker" role="note">
+  <div class="container">
+    <svg class="icon icon--fill ticker__star" aria-hidden="true"><use href="#i-star"/></svg>
+    <p class="ticker__text" id="ticker">Nous acceptons Visa, Mastercard et les promesses de paiement.</p>
+    <svg class="icon icon--fill ticker__star" aria-hidden="true"><use href="#i-star"/></svg>
+  </div>
+</div>
+
+<!-- ============ BIENVENUE ============ -->
+<section class="section section--cream" id="bienvenue" aria-labelledby="bienvenue-titre">
+  <div class="container welcome">
+    <div class="welcome__text reveal">
+      <h2 id="bienvenue-titre" class="title">Bienvenue chez Earl &amp; Chuck’s Automotive</h2>
+      <p class="lead">Depuis des décennies, Earl et Chuck mettent leur savoir-faire, leur expérience et leur amour des gros moteurs au service des automobilistes de la région.</p>
+      <p>Ici, on répare les voitures américaines, les voitures européennes, les voitures japonaises et, sous réserve que Earl soit d’humeur, les voitures électriques. Atelier ouvert, café ouvert, porte ouverte.</p>
+      <div class="welcome__links">
+        <a class="btn btn--sm" href="#rendez-vous">Prendre rendez-vous</a>
+        <a class="btn btn--sm btn--navy" href="#a-propos">Notre histoire</a>
+      </div>
+    </div>
+    <aside class="memo reveal" aria-label="Mot de l’atelier">
+      <span class="memo__tape" aria-hidden="true"></span>
+      <h3>Le mot de l’atelier</h3>
+      <p>Chez nous, pas de diagnostics compliqués. Si votre voiture fait un bruit, nous l’écoutons. Si elle ne démarre plus, nous lui parlons. Et si ça ne fonctionne toujours pas, Chuck appelle Earl.</p>
+      <p class="memo__sign">— La direction (Earl)</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section section--beige" id="services" aria-labelledby="services-titre">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <h2 id="services-titre" class="title">Nos services</h2>
+      <p class="sec-head__intro">De la simple vidange à la reconstruction complète d’un V8, nous prenons soin de votre véhicule comme s’il était le nôtre. Ou comme si c’était celui de Chuck, ce qui est moins prudent.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-oil"/></svg></div>
+        <h3>Révision &amp; entretien</h3>
+        <p>Vidange, filtres, niveaux, contrôle général.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-brake"/></svg></div>
+        <h3>Freinage</h3>
+        <p>Plaquettes, disques, liquide de frein.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-tire"/></svg></div>
+        <h3>Pneumatiques</h3>
+        <p>Montage, équilibrage, rotation et réparation.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-diag"/></svg></div>
+        <h3>Diagnostic moteur</h3>
+        <p>Diagnostic électronique et mécanique.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-engine"/></svg></div>
+        <h3>Moteur &amp; transmission</h3>
+        <p>Réparation et entretien des moteurs et transmissions.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></div>
+        <h3>Climatisation</h3>
+        <p>Diagnostic et réparation de climatisation.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+        <h3>Électricité automobile</h3>
+        <p>Batteries, alternateurs, démarreurs et problèmes électriques.</p>
+      </article>
+      <article class="card card--feature reveal">
+        <span class="card__tag">Notre fierté</span>
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg></div>
+        <h3>Préparation Muscle Car</h3>
+        <p>Réglage moteur, échappement, carburateurs et optimisation des performances.</p>
+      </article>
+      <article class="card card--feature reveal">
+        <span class="card__tag">Spécialité maison</span>
+        <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-sound"/></svg></div>
+        <h3>Réparation de bruits suspects</h3>
+        <p>Une spécialité maison.</p>
+      </article>
+    </div>
+
+    <div class="premium reveal">
+      <div class="premium__badge">Service premium</div>
+      <div class="premium__icon"><svg class="icon" aria-hidden="true"><use href="#i-lamp"/></svg></div>
+      <div class="premium__body">
+        <h3>Suppression du voyant moteur</h3>
+        <p>Le voyant disparaîtra. Nous ne garantissons pas qu’il ne reviendra jamais.</p>
+      </div>
+      <a class="btn btn--yellow btn--sm" href="#rendez-vous" data-service="Suppression du voyant moteur">Réserver</a>
+    </div>
+
+    <p class="note reveal">Vous entendez un bruit étrange ? Nous aussi. Nous ne savons pas encore ce que c’est, mais nous avons déjà trois théories et une clé de 13.</p>
+
+    <!-- Bruitomètre -->
+    <div class="noisemeter reveal" id="bruitometre">
+      <div class="noisemeter__head">
+        <h3>Le Diagnostic Sonore d’Earl &amp; Chuck</h3>
+        <p>Décrivez votre bruit. Nous vous disons ce que nous en pensons. Gratuit, sans engagement et sans garantie.</p>
+      </div>
+      <div class="noisemeter__form">
+        <label for="noise-select">Quel bruit fait votre voiture ?</label>
+        <div class="noisemeter__row">
+          <select id="noise-select">
+            <option value="">— Choisissez un bruit —</option>
+            <option value="0">Un cliquetis au démarrage</option>
+            <option value="1">Un grincement au freinage</option>
+            <option value="2">Un bruit sourd qui vient de l’arrière</option>
+            <option value="3">Un sifflement à haute vitesse</option>
+            <option value="4">Un ronflement qui ressemble à un animal</option>
+            <option value="5">Aucun bruit, mais un mauvais pressentiment</option>
+          </select>
+          <button class="btn btn--navy" type="button" id="noise-go">Lancer le diagnostic</button>
+        </div>
+        <div class="ticket" id="noise-result" aria-live="polite" hidden>
+          <p class="ticket__title">Rapport d’inspection n° <span id="noise-num">0000</span></p>
+          <p class="ticket__text" id="noise-text"></p>
+          <p class="ticket__meta"><span>Théories : <strong id="noise-theories">3</strong></span> <span>Clés requises : <strong id="noise-wrench">13</strong></span> <span>Café nécessaire : <strong>oui</strong></span></p>
+          <a class="btn btn--sm" href="#rendez-vous" data-service="Réparation de bruits suspects">Prendre rendez-vous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POURQUOI NOUS CHOISIR ============ -->
+<section class="section section--metal" id="pourquoi" aria-labelledby="pourquoi-titre">
+  <div class="container">
+    <header class="sec-head sec-head--plate reveal">
+      <h2 id="pourquoi-titre" class="title">Pourquoi nous choisir ?</h2>
+    </header>
+    <div class="why">
+      <div class="why__item plate reveal">
+        <svg class="icon why__icon" aria-hidden="true"><use href="#i-piston"/></svg>
+        <h3>Une expérience qui se voit</h3>
+        <p>Plus de quarante ans à écouter des moteurs. Nous savons faire la différence entre un bruit normal et un bruit « normal pour cette voiture ».</p>
+      </div>
+      <div class="why__item plate reveal">
+        <svg class="icon why__icon" aria-hidden="true"><use href="#i-wrench"/></svg>
+        <h3>Un atelier à l’ancienne</h3>
+        <p>Des outils qui ont fait leurs preuves, un pont élévateur qui tient depuis 1991 et une radio qui n’a jamais changé de station.</p>
+      </div>
+      <div class="why__item plate reveal">
+        <svg class="icon why__icon" aria-hidden="true"><use href="#i-flag"/></svg>
+        <h3>Une entreprise de famille</h3>
+        <p>Ici, on vous connaît par votre prénom, votre voiture par son bruit, et votre cousin par sa dette.</p>
+      </div>
+      <div class="why__item plate reveal">
+        <svg class="icon why__icon" aria-hidden="true"><use href="#i-car"/></svg>
+        <h3>Toutes les voitures sont les bienvenues</h3>
+        <p>Les voitures électriques sont acceptées. Earl préfère cependant ne pas en parler.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENGAGEMENTS ============ -->
+<section class="section section--cream" id="engagements" aria-labelledby="engagements-titre">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <h2 id="engagements-titre" class="title">Nos engagements</h2>
+      <p class="sec-head__intro">Quatre promesses affichées au mur de l’atelier, à côté du calendrier de 1997.</p>
+    </header>
+    <ul class="pledges">
+      <li class="pledge reveal">
+        <h3>Un devis clair</h3>
+        <p>Le prix annoncé est le prix payé. Sauf si Chuck a touché à quelque chose.</p>
+      </li>
+      <li class="pledge reveal">
+        <h3>Des pièces de qualité</h3>
+        <p>Nous privilégions les pièces américaines. Quand il n’y en a pas, nous en trouvons qui leur ressemblent.</p>
+      </li>
+      <li class="pledge reveal">
+        <h3>Un travail propre</h3>
+        <p>Nous ne garantissons pas que votre voiture sera plus propre en repartant.</p>
+      </li>
+      <li class="pledge reveal">
+        <h3>Une vraie garantie</h3>
+        <p>Si vous entendez un bruit après la réparation, ce n’est probablement pas grave. Revenez quand même.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ À PROPOS ============ -->
+<section class="section section--beige" id="a-propos" aria-labelledby="apropos-titre">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <p class="sec-head__kicker">À propos de nous</p>
+      <h2 id="apropos-titre" class="title title--long">Deux hommes. Deux clés à molette. Une passion pour les moteurs.</h2>
+    </header>
+
+    <div class="about">
+      <figure class="polaroid reveal">
+        <img src="images/earl-and-chuck.jpg" alt="Earl (à gauche) et Chuck (à droite) devant le garage" width="1536" height="1024" loading="lazy">
+        <figcaption>Earl (à gauche) et Chuck (à droite), un mardi comme les autres.</figcaption>
+      </figure>
+      <div class="about__text reveal">
+        <p class="lead">Earl et Chuck travaillent ensemble depuis plusieurs décennies. Leur histoire commence dans un petit garage familial où ils ont appris la mécanique avec trois choses : un manuel Haynes, une radio allumée et beaucoup trop de café.</p>
+        <p>En 1978, avec un prêt de la banque locale et une caution fournie par la grand-mère de Chuck, ils ouvrent leur propre atelier sur la Route 66. Le premier client arrive le jour même, pour demander son chemin. Il repart avec une vidange.</p>
+        <p>Depuis, Earl s’occupe des moteurs, de la comptabilité et des opinions. Chuck s’occupe des moteurs, de l’atelier et des explications. Personne ne s’occupe vraiment de l’organisation, mais tout le monde s’y retrouve.</p>
+        <p>Aujourd’hui, le garage est une institution locale. On y vient pour une réparation, on y reste pour la conversation, et on y retourne parce qu’Earl a gardé la voiture un jour de plus « pour vérifier un truc ».</p>
+      </div>
+    </div>
+
+    <h3 class="subtitle reveal">Notre équipe</h3>
+    <div class="team">
+      <article class="member plate reveal">
+        <div class="member__photo" role="img" aria-label="Portrait d’Earl" style="--s:3.4;--px:18.8%;--py:61%"></div>
+        <div class="member__body">
+          <h4>Earl</h4>
+          <p class="member__role">Cofondateur &amp; mécanicien en chef</p>
+          <p>Spécialités : carburateurs, café, opinions fermes sur les voitures électriques. Répond au téléphone « quand il l’entend ».</p>
+        </div>
+      </article>
+      <article class="member plate reveal">
+        <div class="member__photo" role="img" aria-label="Portrait de Chuck" style="--s:3.4;--px:47.9%;--py:61%"></div>
+        <div class="member__body">
+          <h4>Chuck</h4>
+          <p class="member__role">Cofondateur &amp; mécanicien en chef</p>
+          <p>Spécialités : explications détaillées, rangement (depuis 2003) et appeler Earl quand il le faut.</p>
+        </div>
+      </article>
+    </div>
+    <p class="note note--small reveal">Oui, ils ont l’air jeunes pour quarante-huit ans de métier. Earl dit que c’est l’huile moteur.</p>
+
+    <h3 class="subtitle reveal">Notre histoire en dates</h3>
+    <ol class="timeline">
+      <li class="tl reveal">
+        <span class="tl__year">1978</span>
+        <div class="tl__body"><h4>Fondation du garage</h4><p>Un prêt, deux clés à molette et une enseigne peinte à la main.</p></div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__year">1984</span>
+        <div class="tl__body"><h4>Premier moteur V8 entièrement reconstruit</h4><p>Le moteur démarre. Les voisins aussi, en sursaut.</p></div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__year">1991</span>
+        <div class="tl__body"><h4>Acquisition du premier pont élévateur</h4><p>Jusque-là, les voitures étaient réparées au sol. Et parfois dessous.</p></div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__year">2003</span>
+        <div class="tl__body"><h4>Chuck accepte enfin de nettoyer l’atelier</h4><p>Le balai est toujours en service. L’atelier, un peu moins.</p></div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__year">2012</span>
+        <div class="tl__body"><h4>Earl découvre Internet</h4><p>Il y reste six semaines. Il en revient avec un avis sur tout.</p></div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__year">2024</span>
+        <div class="tl__body"><h4>Création du site internet</h4><p>Annoncée avec enthousiasme. Mise en ligne un peu plus tard.</p></div>
+      </li>
+      <li class="tl tl--last reveal">
+        <span class="tl__year">2026</span>
+        <div class="tl__body"><h4>Toujours ouverts. Toujours pas convaincus par les voitures électriques.</h4></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FAITS D'ARMES ============ -->
+<section class="section section--navy" id="faits-d-armes" aria-labelledby="faits-titre">
+  <div class="container">
+    <header class="sec-head sec-head--light reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <h2 id="faits-titre" class="title">Nos faits d’armes</h2>
+      <p class="sec-head__intro">Quarante-huit ans de métier, en chiffres vérifiés avec le plus grand sérieux.</p>
+    </header>
+    <div class="stats">
+      <div class="stat reveal"><span class="stat__num" data-target="48" data-suffix=" ans">48 ans</span><span class="stat__label">d’expérience</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="12847">12 847</span><span class="stat__label">vidanges réalisées</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="3291">3 291</span><span class="stat__label">voyants moteur éteints</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="742">742</span><span class="stat__label">moteurs sauvés</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="0">0</span><span class="stat__label">véhicules électriques achetés par Earl</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="17">17</span><span class="stat__label">clés de 10 perdues</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="1">1</span><span class="stat__label">moteur V8 que Chuck refuse toujours d’admettre avoir cassé</span></div>
+      <div class="stat reveal"><span class="stat__num" data-target="99.7" data-decimals="1" data-suffix=" %">99,7 %</span><span class="stat__label">de réparations réussies</span></div>
+    </div>
+    <p class="fineprint reveal"><em>Les statistiques sont susceptibles d’avoir été légèrement arrondies par Earl.</em></p>
+  </div>
+</section>
+
+<!-- ============ AVIS ============ -->
+<section class="section section--cream" id="avis" aria-labelledby="avis-titre">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <h2 id="avis-titre" class="title">Avis de nos clients</h2>
+    </header>
+
+    <div class="rating plate reveal">
+      <div class="rating__score">4,9<span> / 5</span></div>
+      <div class="rating__stars" role="img" aria-label="4,9 étoiles sur 5">★★★★★</div>
+      <div class="rating__count">1 247 avis</div>
+      <p class="rating__note"><em>Avis collectés principalement auprès de personnes qui connaissent Earl et Chuck.</em></p>
+    </div>
+
+    <div class="reviews">
+      <blockquote class="review reveal">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>J’ai amené mon F-150 pour un problème de démarrage. Earl a tapé deux fois sur le moteur avec une clé et il est reparti. 5 étoiles.</p>
+        <footer><strong>Mike R.</strong><span>Avis vérifié par Earl</span></footer>
+      </blockquote>
+      <blockquote class="review reveal">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Chuck m’a expliqué le problème pendant 45 minutes. Je n’ai absolument rien compris mais ma voiture fonctionne.</p>
+        <footer><strong>Debbie M.</strong><span>Avis vérifié par Chuck</span></footer>
+      </blockquote>
+      <blockquote class="review reveal">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Prix raisonnables, travail sérieux. J’ai juste demandé pourquoi il y avait autant de drapeaux américains.</p>
+        <footer><strong>Billy T.</strong><span>Client fidèle</span></footer>
+      </blockquote>
+      <blockquote class="review reveal">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Ils ont réparé ma voiture. Ils ont aussi essayé de me convaincre que mon SUV avait besoin d’un V8.</p>
+        <footer><strong>James W.</strong><span>Avis vérifié par Earl</span></footer>
+      </blockquote>
+      <blockquote class="review reveal">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Earl m’a dit que le bruit venait de « quelque part à gauche ». Il avait raison. C’était à gauche.</p>
+        <footer><strong>Roy K.</strong><span>Client fidèle</span></footer>
+      </blockquote>
+      <blockquote class="review reveal">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Je venais juste pour gonfler un pneu. Ils m’ont fait une vidange. Mais l’huile est très propre.</p>
+        <footer><strong>Tammy L.</strong><span>Avis vérifié par Chuck</span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="section section--beige" id="galerie" aria-labelledby="galerie-titre">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <h2 id="galerie-titre" class="title">Galerie</h2>
+      <p class="sec-head__intro">Quelques souvenirs de l’atelier. Cliquez sur une photo pour l’agrandir.</p>
+    </header>
+    <div class="g-grid">
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:2.2;--px:31.7%;--py:60.2%" data-caption="Earl et Chuck devant l’atelier, comme tous les jours." aria-label="Agrandir : Earl et Chuck devant l’atelier"></button><figcaption>Earl et Chuck, au poste</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:2;--px:30%;--py:0%" data-caption="L’enseigne, peinte à la main. La peinture est d’origine. Les fissures aussi." aria-label="Agrandir : l’enseigne du garage"></button><figcaption>L’enseigne d’origine</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:3;--px:83%;--py:85.2%" data-caption="Un V8 en cours de reconstruction. Chuck jure qu’il ne l’a pas touché." aria-label="Agrandir : le moteur V8"></button><figcaption>Le V8 du moment</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:3.2;--px:64.6%;--py:53.1%" data-caption="Un muscle car sur le pont élévateur, en attente de réglage." aria-label="Agrandir : muscle car sur le pont"></button><figcaption>Muscle car sur pont</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:3;--px:0%;--py:90%" data-caption="Pickup en convalescence. Le patient est stable." aria-label="Agrandir : pickup en réparation"></button><figcaption>Pickup en convalescence</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:2.6;--px:100%;--py:100%" data-caption="Le coin des outils et la glacière réglementaire." aria-label="Agrandir : outillage et glacière"></button><figcaption>Outils et coin pause</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:3.5;--px:100%;--py:42.6%" data-caption="Panneaux d’époque et pneus en attente. Certains sont là depuis avant Earl." aria-label="Agrandir : panneaux anciens et pneus"></button><figcaption>Vieux panneaux</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:3.5;--px:0%;--py:13%" data-caption="Drapeaux, enseigne et pompe à essence. Il y a beaucoup de drapeaux." aria-label="Agrandir : drapeaux et enseigne GAS"></button><figcaption>Drapeaux (nombreux)</figcaption></figure>
+      <figure class="g-item reveal"><button class="g-photo" type="button" style="--s:4.5;--px:88.6%;--py:42%" data-caption="Le néon « OPEN ». Éteint le dimanche, rallumé le lundi." aria-label="Agrandir : le néon OPEN"></button><figcaption>Le néon, toujours fidèle</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPEL À L'ACTION ============ -->
+<section class="cta" aria-labelledby="cta-titre">
+  <div class="container cta__in reveal">
+    <h2 id="cta-titre">Un bruit étrange ? Un voyant allumé ? Une envie de V8 ?</h2>
+    <p>Pas de rendez-vous ? Pas de problème. Earl sera probablement là.</p>
+    <a class="btn btn--yellow" href="#rendez-vous">Prendre rendez-vous</a>
+  </div>
+</section>
+
+<!-- ============ RENDEZ-VOUS ============ -->
+<section class="section section--navy" id="rendez-vous" aria-labelledby="rdv-titre">
+  <div class="container rdv">
+    <div class="rdv__intro reveal">
+      <header class="sec-head sec-head--light sec-head--left">
+        <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+        <h2 id="rdv-titre" class="title">Prendre rendez-vous</h2>
+        <p class="sec-head__intro">Remplissez le formulaire. Nous vous répondrons dans les meilleurs délais, c’est-à-dire dès qu’Earl ou Chuck aura fini son café.</p>
+      </header>
+      <ol class="steps">
+        <li><strong>Vous décrivez votre voiture</strong> et ce qu’elle vous raconte.</li>
+        <li><strong>Earl ou Chuck lit votre demande</strong> avec sérieux, un café à la main.</li>
+        <li><strong>On vous rappelle</strong> pour fixer l’heure. Ou on vous croise au supermarché.</li>
+      </ol>
+      <p class="rdv__phone">Vous préférez parler à un humain ?<br><a href="tel:+14175550198">(417) 555-0198</a></p>
+    </div>
+
+    <div class="rdv__panel plate plate--cream reveal">
+      <form id="rdv-form" action="#" method="POST" data-endpoint="">
+        <!--
+          Pour recevoir les demandes par e-mail : créez un formulaire gratuit sur formspree.io,
+          puis collez l'adresse fournie dans la constante FORM_ENDPOINT de js/script.js.
+        -->
+        <div class="form-grid">
+          <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" type="text" autocomplete="given-name" required></div>
+          <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="family-name" required></div>
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="f-marque">Marque du véhicule</label><input id="f-marque" name="marque" type="text" placeholder="Ford, Chevrolet, Dodge…" required></div>
+          <div class="field"><label for="f-modele">Modèle</label><input id="f-modele" name="modele" type="text" placeholder="F-150, Camaro, Charger…" required></div>
+          <div class="field"><label for="f-annee">Année</label><input id="f-annee" name="annee" type="number" inputmode="numeric" min="1900" max="2027" placeholder="1969" required></div>
+          <div class="field"><label for="f-km">Kilométrage</label><input id="f-km" name="kilometrage" type="number" inputmode="numeric" min="0" step="1" placeholder="152000" required></div>
+          <div class="field field--full">
+            <label for="f-service">Type de prestation</label>
+            <select id="f-service" name="prestation" required>
+              <option value="">— Choisissez une prestation —</option>
+              <option>Révision &amp; entretien</option>
+              <option>Freinage</option>
+              <option>Pneumatiques</option>
+              <option>Diagnostic moteur</option>
+              <option>Moteur &amp; transmission</option>
+              <option>Climatisation</option>
+              <option>Électricité automobile</option>
+              <option>Préparation Muscle Car</option>
+              <option>Réparation de bruits suspects</option>
+              <option>Suppression du voyant moteur</option>
+              <option>Autre (Earl trouvera)</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-date">Date souhaitée</label><input id="f-date" name="date" type="date" required></div>
+          <div class="field"><label for="f-heure">Heure souhaitée</label><select id="f-heure" name="heure" required><option value="">— Choisissez une heure —</option></select></div>
+          <p class="field__error field--full" id="date-error" role="alert" hidden>Dimanche : même Earl ne travaille pas. Choisissez un autre jour.</p>
+          <div class="field field--full"><label for="f-desc">Description du problème</label><textarea id="f-desc" name="description" rows="5" placeholder="Que fait la voiture ? Quel bruit ? Depuis quand ?" required></textarea></div>
+          <!-- Anti-spam (champ invisible) -->
+          <div class="hp" aria-hidden="true"><label>Ne pas remplir<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        </div>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <button class="btn btn--block" type="submit" id="rdv-submit">Demander un rendez-vous</button>
+        <p class="form-fine">Nous acceptons Visa, Mastercard et les promesses de paiement.</p>
+      </form>
+
+      <div class="success" id="rdv-success" tabindex="-1" hidden>
+        <div class="success__stamp" aria-hidden="true">★</div>
+        <h3>Merci ! Votre demande a bien été reçue.</h3>
+        <p>Earl ou Chuck reviendra vers vous dès qu’ils auront terminé leur café.</p>
+        <dl class="success__recap" id="rdv-recap"></dl>
+        <button class="btn btn--navy btn--sm" type="button" id="rdv-again">Faire une autre demande</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--cream" id="contact" aria-labelledby="contact-titre">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-head__stars" aria-hidden="true">★ ★ ★</p>
+      <h2 id="contact-titre" class="title">Nous trouver</h2>
+    </header>
+
+    <div class="contact">
+      <div class="contact__info">
+        <div class="plate plate--cream contact__card reveal">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Adresse</h3>
+          <address>
+            <strong>Earl &amp; Chuck’s Automotive</strong><br>
+            742 Route 66<br>
+            Springfield, Missouri<br>
+            USA
+          </address>
+          <ul class="contact__list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+14175550198">(417) 555-0198</a></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:info@earlandchucks.com">info@earlandchucks.com</a></li>
+          </ul>
+        </div>
+
+        <div class="plate plate--cream contact__card reveal">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Horaires</h3>
+          <p class="open-sign" data-open-status aria-live="polite">Horaires d’ouverture</p>
+          <table class="hours">
+            <tbody>
+              <tr data-day="1-5"><th scope="row">Lundi — Vendredi</th><td>8:00 — 18:00</td></tr>
+              <tr data-day="6"><th scope="row">Samedi</th><td>8:00 — 14:00</td></tr>
+              <tr data-day="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+            </tbody>
+          </table>
+          <p class="hours__quip">Dimanche : même Earl ne travaille pas.</p>
+          <p class="hours__tz">Heures du Missouri (fuseau Central).</p>
+        </div>
+
+        <div class="contact__buttons">
+          <a class="btn" href="tel:+14175550198">Appeler</a>
+          <a class="btn btn--navy" href="mailto:info@earlandchucks.com">Écrire</a>
+        </div>
+      </div>
+
+      <div class="contact__map reveal">
+        <figure class="map" aria-label="Plan stylisé de l’emplacement du garage">
+          <svg viewBox="0 0 700 520" role="img" aria-labelledby="map-title map-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="map-title">Plan de situation</title>
+            <desc id="map-desc">Plan stylisé : le garage Earl &amp; Chuck’s se trouve sur la Route 66, à côté d’un stand de feux d’artifice et en face de la station-service concurrente.</desc>
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#c9b787" stroke-width="1" opacity=".5"/></pattern>
+            </defs>
+            <rect width="700" height="520" fill="#eadcb6"/>
+            <rect width="700" height="520" fill="url(#grid)"/>
+            <!-- zones -->
+            <rect x="30" y="30" width="190" height="150" rx="10" fill="#c9cf9a" opacity=".75"/>
+            <rect x="470" y="330" width="200" height="160" rx="10" fill="#c9cf9a" opacity=".75"/>
+            <path d="M0 440 Q120 400 230 450 T470 470 T700 440 V520 H0z" fill="#a9c3c9" opacity=".8"/>
+            <!-- routes -->
+            <path d="M-10 270 H710" stroke="#5d5d5d" stroke-width="46"/>
+            <path d="M-10 270 H710" stroke="#e6c04a" stroke-width="3" stroke-dasharray="16 12"/>
+            <path d="M200 -10 V530" stroke="#6b6b6b" stroke-width="26"/>
+            <path d="M200 -10 V530" stroke="#f1e6cc" stroke-width="2" stroke-dasharray="10 10"/>
+            <path d="M520 -10 V250" stroke="#6b6b6b" stroke-width="22"/>
+            <path d="M520 290 V530" stroke="#6b6b6b" stroke-width="22"/>
+            <!-- panneau Route 66 -->
+            <g transform="translate(75 195)">
+              <path d="M0 0h46v8l-4 6 4 6v8l-23 12L0 28v-8l4-6-4-6z" fill="#f6f0e1" stroke="#241c15" stroke-width="2.5"/>
+              <text x="23" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#241c15" font-family="Oswald, Impact, sans-serif">ROUTE</text>
+              <text x="23" y="32" text-anchor="middle" font-size="14" font-weight="700" fill="#241c15" font-family="Oswald, Impact, sans-serif">66</text>
+            </g>
+            <!-- bâtiments -->
+            <g font-family="Oswald, Impact, sans-serif" font-size="13" fill="#241c15">
+              <rect x="560" y="190" width="90" height="48" rx="3" fill="#f6f0e1" stroke="#241c15" stroke-width="2"/>
+              <text x="605" y="219" text-anchor="middle">Station concurrente</text>
+              <rect x="560" y="300" width="90" height="40" rx="3" fill="#f6f0e1" stroke="#241c15" stroke-width="2"/>
+              <text x="605" y="324" text-anchor="middle">Stand de feux d’artifice</text>
+              <rect x="240" y="320" width="100" height="50" rx="3" fill="#f6f0e1" stroke="#241c15" stroke-width="2"/>
+              <text x="290" y="350" text-anchor="middle">Église baptiste</text>
+              <rect x="240" y="170" width="100" height="44" rx="3" fill="#f6f0e1" stroke="#241c15" stroke-width="2"/>
+              <text x="290" y="197" text-anchor="middle">Dairy Freeze</text>
+              <text x="125" y="105" text-anchor="middle" font-style="italic">Le champ de Dale</text>
+              <text x="570" y="420" text-anchor="middle" font-style="italic">Un autre champ</text>
+              <text x="350" y="494" text-anchor="middle" font-style="italic">Rivière (peu profonde)</text>
+            </g>
+            <!-- le garage -->
+            <g transform="translate(355 205)">
+              <rect x="0" y="0" width="120" height="50" rx="3" fill="#8f1e1e" stroke="#f6f0e1" stroke-width="3"/>
+              <rect x="6" y="6" width="108" height="38" fill="none" stroke="#f6f0e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="700" fill="#f6f0e1" font-family="Alfa Slab One, Georgia, serif">EARL &amp; CHUCK’S</text>
+              <text x="60" y="39" text-anchor="middle" font-size="9" fill="#f6f0e1" font-family="Oswald, Impact, sans-serif" letter-spacing="2">AUTOMOTIVE</text>
+            </g>
+            <!-- épingle -->
+            <g class="map__pin" transform="translate(415 150)">
+              <path d="M0 0c-16 0-28 12-28 27 0 20 28 44 28 44s28-24 28-44c0-15-12-27-28-27z" fill="#d4a537" stroke="#241c15" stroke-width="3"/>
+              <polygon points="0,12 4.7,21.6 15.3,23 7.6,30.4 9.4,41 0,36 -9.4,41 -7.6,30.4 -15.3,23 -4.7,21.6" fill="#13294b"/>
+            </g>
+            <!-- boussole -->
+            <g transform="translate(640 70)">
+              <circle r="30" fill="#f6f0e1" stroke="#241c15" stroke-width="2.5"/>
+              <polygon points="0,-24 6,0 -6,0" fill="#8f1e1e"/>
+              <polygon points="0,24 6,0 -6,0" fill="#241c15"/>
+              <text y="-34" text-anchor="middle" font-size="14" font-weight="700" font-family="Oswald, Impact, sans-serif" fill="#241c15">N</text>
+            </g>
+            <!-- échelle -->
+            <g transform="translate(40 480)" font-family="Special Elite, Georgia, serif" font-size="12" fill="#241c15">
+              <rect width="100" height="8" fill="#241c15"/>
+              <rect x="50" width="50" height="8" fill="#f6f0e1" stroke="#241c15"/>
+              <text y="26">1 pouce = 1 clé de 13</text>
+            </g>
+          </svg>
+          <figcaption>Plan non contractuel. Le garage est facile à reconnaître : c’est celui avec les drapeaux.</figcaption>
+        </figure>
+        <p class="note note--small">Nous acceptons Visa, Mastercard et les promesses de paiement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__stripes" aria-hidden="true"></div>
+  <div class="container footer__in">
+    <div class="footer__brand">
+      <svg class="footer__badge" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#8f1e1e" stroke="#f6f0e1" stroke-width="3"/>
+        <circle cx="32" cy="32" r="23" fill="#13294b" stroke="#d4a537" stroke-width="1.5"/>
+        <polygon points="32,13 37.4,25.8 51,27 40.7,36 43.9,49.3 32,42.2 20.1,49.3 23.3,36 13,27 26.6,25.8" fill="#f6f0e1"/>
+      </svg>
+      <p class="footer__name">Earl &amp; Chuck’s Automotive</p>
+      <p class="footer__slogan"><em>God Bless America and Carburetors</em></p>
+      <p class="footer__addr">742 Route 66 — Springfield, Missouri, USA<br><a href="tel:+14175550198">(417) 555-0198</a> · <a href="mailto:info@earlandchucks.com">info@earlandchucks.com</a></p>
+    </div>
+    <nav class="footer__nav" aria-label="Navigation de pied de page">
+      <a href="#services">Services</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#rendez-vous">Rendez-vous</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer__hours">
+      <p class="footer__h">Horaires</p>
+      <p>Lundi — Vendredi : 8:00 — 18:00<br>Samedi : 8:00 — 14:00<br>Dimanche : Fermé</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-in">
+      <p>© 2026 Earl &amp; Chuck’s Automotive</p>
+      <p>Professionnels de la mécanique depuis 1978. Professionnels d’Internet depuis 2026.</p>
+      <p>Site internet conçu avec beaucoup trop de café et probablement trop de WD-40.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox galerie -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fermer">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Photo précédente">‹</button>
+  <figure class="lightbox__fig">
+    <div class="lightbox__photo" id="lb-photo"></div>
+    <figcaption id="lb-caption"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Photo suivante">›</button>
+</div>
+
+<!-- Bandeau cookies -->
+<div class="cookies plate" id="cookies" role="dialog" aria-label="Cookies" hidden>
+  <p><strong>Ce site utilise des cookies.</strong> Earl ne sait pas ce que c’est. Chuck dit que ça se mange.</p>
+  <div class="cookies__btns">
+    <button class="btn btn--sm" type="button" data-cookie="oui">Accepter</button>
+    <button class="btn btn--sm btn--navy" type="button" data-cookie="non">Refuser</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<button class="to-top" id="to-top" type="button" aria-label="Retour en haut de page" hidden><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
