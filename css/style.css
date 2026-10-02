@@ -233,3 +233,4 @@ img,svg{max-width:100%}
 
 .about{display:block}
 .about__text{max-width:760px;margin:0 auto;text-align:center}
+.about .about__text,.about .about__text p{text-align:center}
