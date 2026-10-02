@@ -230,3 +230,6 @@ img,svg{max-width:100%}
 .success__recap dt{font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--red);font-weight:700}
 .success__recap dd{margin:0;overflow-wrap:anywhere}
 @media(max-width:650px){.success__recap{grid-template-columns:1fr;gap:0}.success__recap dd{margin-bottom:8px}}
+
+.about{display:block}
+.about__text{max-width:760px;margin:0 auto;text-align:center}
